@@ -91,7 +91,7 @@
 -(void)tfscroller:(TFScroller*)tfscroller didSelectImageAtIndex:(NSInteger)pIndex;
 -(UIView*)tfScroller:(TFScroller*)tfscroller viewForIndex:(NSInteger)pInteger;
 -(NSUInteger)numberOfPagesInScroller:(TFScroller*)tfscroller ;
--(CGFloat)widthForPagesInScroller:(TFScroller*)tfscroller ;
+-(CGFloat)widthForPagesInScroller:(TFScroller*)tfscroller;
 -(CGFloat)gapForPagesInScroller:(TFScroller*)tfscroller ;
 
 @end

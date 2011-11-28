@@ -35,13 +35,12 @@
     self.mScroller = [[[TFScroller alloc] initWithFrame:CGRectMake(0, 175, 320, 50) ] autorelease];
     self.mScroller.mDelegate = self;
     [self.mScroller scrollViewInitialisation];
-	[self.view addSubview:self.mScroller.mScrollView];    
+	[self.view addSubview:self.mScroller.mScrollView];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     UIButton *bt =  [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [bt setTitle:@"Click" forState:UIControlStateNormal];
@@ -52,7 +51,8 @@
     self.mScroller = [[[TFScroller alloc] initWithFrame:CGRectMake(0, 175, 320, 50) ] autorelease];
     self.mScroller.mDelegate = self;
     [self.mScroller scrollViewInitialisation];
-	[self.view addSubview:self.mScroller.mScrollView];    
+	[self.view addSubview:self.mScroller.mScrollView];  
+    self.mScroller.mScrollView.backgroundColor = [UIColor redColor];
     
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -84,6 +84,8 @@
     {
         [v setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     }
+    
+    v.frame = CGRectMake(0, 0, 50, 50);
     
     return v;
 	
