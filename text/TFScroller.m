@@ -322,7 +322,7 @@
 	UIView *imageView = [mImageViewsArray objectAtIndex:page];
     if ((NSNull *)imageView == [NSNull null])
     {
-        imageView = [self.mDelegate tfScroller:self viewForIndex:(page%mActualPages) ];
+        imageView = [[self.mDelegate tfScroller:self viewForIndex:(page%mActualPages) ] retain];
         imageView.frame = CGRectMake(0, 0, mWidthPage, self.mScrollView.frame.size.height);
         
 		@synchronized(self){

@@ -25,9 +25,29 @@
 
 #pragma mark - View lifecycle
 
+
+-(void)click
+{
+    if (self.mScroller) {
+        [self.mScroller.mScrollView removeFromSuperview];
+        self.mScroller = nil;
+    }
+    self.mScroller = [[[TFScroller alloc] initWithFrame:CGRectMake(0, 175, 320, 50) ] autorelease];
+    self.mScroller.mDelegate = self;
+    [self.mScroller scrollViewInitialisation];
+	[self.view addSubview:self.mScroller.mScrollView];    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    UIButton *bt =  [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [bt setTitle:@"Click" forState:UIControlStateNormal];
+    [self.view addSubview: bt];
+    bt.center = CGPointMake(400, 320/2);
+    [bt addTarget:self action:@selector(click) forControlEvents:UIControlStateNormal];
     
     self.mScroller = [[[TFScroller alloc] initWithFrame:CGRectMake(0, 175, 320, 50) ] autorelease];
     self.mScroller.mDelegate = self;
