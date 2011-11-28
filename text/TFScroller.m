@@ -72,7 +72,6 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
 	
-	
 	if (!flag) {
 		return;
 	}
@@ -209,9 +208,9 @@
 
 	self.mImageViewsArray = [controllers autorelease];
 	[NSThread detachNewThreadSelector:@selector(loadScrollViewWithPage:) toTarget:self withObject:[NSNumber numberWithInt:0]];
-		[NSThread detachNewThreadSelector:@selector(loadScrollViewWithPage:) toTarget:self withObject:[NSNumber numberWithInt:1]];
-		[NSThread detachNewThreadSelector:@selector(loadScrollViewWithPage:) toTarget:self withObject:[NSNumber numberWithInt:2]];   
-	
+    [NSThread detachNewThreadSelector:@selector(loadScrollViewWithPage:) toTarget:self withObject:[NSNumber numberWithInt:1]];
+    [NSThread detachNewThreadSelector:@selector(loadScrollViewWithPage:) toTarget:self withObject:[NSNumber numberWithInt:2]];   
+    
 	CGFloat width = mTotalPages * (mGap + mWidthPage)  + mGap;
 	mScrollView.contentSize = CGSizeMake(width, mScrollView.frame.size.height);
     mScrollView.showsHorizontalScrollIndicator = NO;
@@ -219,6 +218,8 @@
     mScrollView.scrollsToTop = YES;
 	mScrollView.delegate = self;
 	mScrollView.userInteractionEnabled=YES;
+    
+    [self scrollToCorrect:mScrollView andFlag: YES];
 }
 
 -(void)setMImageArray:(NSMutableArray*)pImages
@@ -383,10 +384,10 @@
 
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-	[self scrollToCorrect:scrollView];
+	[self scrollToCorrect:scrollView andFlag:YES];
 }
 
--(void)scrollToCorrect:(UIScrollView*)scrollView
+-(void)scrollToCorrect:(UIScrollView*)scrollView andFlag:(BOOL)flag
 {
 	CGFloat min=mLag;
 	int selectedI=0;
@@ -398,7 +399,7 @@
 	
 	NSLog(@"finally min is %f index is %d",min,selectedI);
 	mAnimation = TRUE;
-	[scrollView setContentOffset:CGPointMake(mLag + selectedI*(mWidthPage+mGap), 0) animated:YES];
+	[scrollView setContentOffset:CGPointMake(mLag + selectedI*(mWidthPage+mGap), 0) animated:flag];
 }
 
 -(void)scheduleScrollingAfter:(NSTimeInterval)pSeconds
