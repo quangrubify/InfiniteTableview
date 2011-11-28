@@ -21,6 +21,8 @@
 		745DA44F1483529A003C91F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745DA42D1483529A003C91F6 /* Foundation.framework */; };
 		745DA4571483529A003C91F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 745DA4551483529A003C91F6 /* InfoPlist.strings */; };
 		745DA45A1483529A003C91F6 /* textTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 745DA4591483529A003C91F6 /* textTests.m */; };
+		745DA465148352C4003C91F6 /* TFScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 745DA464148352C4003C91F6 /* TFScroller.m */; };
+		745DA46A14835412003C91F6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745DA46914835412003C91F6 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +40,25 @@
 		745DA42B1483529A003C91F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		745DA42D1483529A003C91F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		745DA42F1483529A003C91F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		745DA4331483529A003C91F6 /* text-Info.plist */ = {isa = PBXFileReference; path = "text-Info.plist"; sourceTree = "<group>"; };
+		745DA4331483529A003C91F6 /* text-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "text-Info.plist"; sourceTree = "<group>"; };
 		745DA4351483529A003C91F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		745DA4371483529A003C91F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		745DA4391483529A003C91F6 /* text-Prefix.pch */ = {isa = PBXFileReference; path = "text-Prefix.pch"; sourceTree = "<group>"; };
-		745DA43A1483529A003C91F6 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		745DA4391483529A003C91F6 /* text-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "text-Prefix.pch"; sourceTree = "<group>"; };
+		745DA43A1483529A003C91F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		745DA43B1483529A003C91F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		745DA43E1483529A003C91F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		745DA4411483529A003C91F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		745DA4431483529A003C91F6 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		745DA4431483529A003C91F6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		745DA4441483529A003C91F6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		745DA44B1483529A003C91F6 /* textTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = textTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		745DA44C1483529A003C91F6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		745DA4541483529A003C91F6 /* textTests-Info.plist */ = {isa = PBXFileReference; path = "textTests-Info.plist"; sourceTree = "<group>"; };
+		745DA4541483529A003C91F6 /* textTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "textTests-Info.plist"; sourceTree = "<group>"; };
 		745DA4561483529A003C91F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		745DA4581483529A003C91F6 /* textTests.h */ = {isa = PBXFileReference; path = textTests.h; sourceTree = "<group>"; };
+		745DA4581483529A003C91F6 /* textTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textTests.h; sourceTree = "<group>"; };
 		745DA4591483529A003C91F6 /* textTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textTests.m; sourceTree = "<group>"; };
+		745DA463148352C4003C91F6 /* TFScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFScroller.h; sourceTree = "<group>"; };
+		745DA464148352C4003C91F6 /* TFScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFScroller.m; sourceTree = "<group>"; };
+		745DA46914835412003C91F6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745DA46A14835412003C91F6 /* QuartzCore.framework in Frameworks */,
 				745DA42C1483529A003C91F6 /* UIKit.framework in Frameworks */,
 				745DA42E1483529A003C91F6 /* Foundation.framework in Frameworks */,
 				745DA4301483529A003C91F6 /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +108,7 @@
 		745DA42A1483529A003C91F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				745DA46914835412003C91F6 /* QuartzCore.framework */,
 				745DA42B1483529A003C91F6 /* UIKit.framework */,
 				745DA42D1483529A003C91F6 /* Foundation.framework */,
 				745DA42F1483529A003C91F6 /* CoreGraphics.framework */,
@@ -113,6 +120,8 @@
 		745DA4311483529A003C91F6 /* text */ = {
 			isa = PBXGroup;
 			children = (
+				745DA463148352C4003C91F6 /* TFScroller.h */,
+				745DA464148352C4003C91F6 /* TFScroller.m */,
 				745DA43A1483529A003C91F6 /* AppDelegate.h */,
 				745DA43B1483529A003C91F6 /* AppDelegate.m */,
 				745DA43D1483529A003C91F6 /* MainStoryboard_iPhone.storyboard */,
@@ -264,6 +273,7 @@
 				745DA4381483529A003C91F6 /* main.m in Sources */,
 				745DA43C1483529A003C91F6 /* AppDelegate.m in Sources */,
 				745DA4451483529A003C91F6 /* ViewController.m in Sources */,
+				745DA465148352C4003C91F6 /* TFScroller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +336,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -352,7 +362,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

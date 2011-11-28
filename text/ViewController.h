@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TFScroller.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<TFScrollerDelegate>
+{
+
+    TFScroller *mScroller;
+}
+
+@property(nonatomic,retain)	TFScroller *mScroller;
 
 @end
