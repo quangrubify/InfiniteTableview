@@ -29,6 +29,7 @@
 	CGPoint currentOffset = mScrollView.contentOffset;
 	[mScrollView setContentOffset:CGPointMake(currentOffset.x + (mGap+mWidthPage), 0) animated:YES];
 }
+
 -(void)goToPreviousPage
 {
 	CGPoint currentOffset = mScrollView.contentOffset;
@@ -37,6 +38,7 @@
 	
 	[mScrollView setContentOffset:CGPointMake(currentOffset.x - (mGap+mWidthPage), 0) animated:YES];
 }
+
 -(CABasicAnimation*)getAnimationforPoint:(CGPoint)pPoint
 {
 	CGPoint startPoint = pPoint;
@@ -191,9 +193,9 @@
 	mLag = step +mWidthPage/2 - mFrame.size.width/2;
     
 	if (!mScrollView) {
+        
 		UIScrollView *temp=[[UIScrollView alloc] initWithFrame:mFrame];
-		
-		self.mScrollView=temp;
+		self.mScrollView = temp;
 		
 		[temp release];
 	}
@@ -218,14 +220,12 @@
     mScrollView.scrollsToTop = YES;
 	mScrollView.delegate = self;
 	mScrollView.userInteractionEnabled=YES;
-    
     [self scrollToCorrect:mScrollView andFlag: YES];
 }
 
 -(void)setMImageArray:(NSMutableArray*)pImages
 {
 	[self stopScrolling];
-	
 	[pImages retain];
 	[mImageArray release];
 	mImageArray = pImages;
@@ -279,7 +279,6 @@
 {
 	UIView *imageView = nil ;
 	
-	
 	if ([mImageViewsArray count] > 0) {
 		mFirstButton = [mImageViewsArray objectAtIndex:0];
 		
@@ -292,7 +291,7 @@
 			
 			CGRect frame = mScrollView.frame;
 			//frame.origin.x = (frame.size.width/2) * i;
-			frame.origin.x = mGap + ( mWidthPage +mGap ) * i;
+			frame.origin.x = mGap + ( mWidthPage + mGap ) * i;
 			frame.origin.y = 0;
 			
 			frame.size = imageView.frame.size;
@@ -301,7 +300,7 @@
 			[mScrollView addSubview:imageView];
 		}
 	}
-	
+    
 	mLastButton = imageView;
 	if ([mImageViewsArray count]==1) { // If only one image is to be displayed in scroller
 		UIView *imageView = [mImageViewsArray objectAtIndex:0];
@@ -367,7 +366,6 @@
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
-	
 	NSLog(@"scrollViewDidEndScrollingAnimation");
 	if (mManual) {
 		mManual = FALSE;
@@ -383,6 +381,7 @@
 	[scrollView setContentOffset:CGPointMake(mLag +normalIndex*(mWidthPage+mGap), 0) animated:NO];
 
 }
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 	[self scrollToCorrect:scrollView andFlag:YES];
 }
@@ -391,12 +390,8 @@
 {
 	CGFloat min=mLag;
 	int selectedI=0;
-	
 	selectedI = (int)round( ((int)scrollView.contentOffset.x - mLag)/(mGap+mWidthPage)  ) ;
-
-	
 	mSelectedIndex = selectedI;
-	
 	NSLog(@"finally min is %f index is %d",min,selectedI);
 	mAnimation = TRUE;
 	[scrollView setContentOffset:CGPointMake(mLag + selectedI*(mWidthPage+mGap), 0) animated:flag];

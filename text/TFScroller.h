@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
+
 #define TRAVERSE_AMOUNT 10
 #define ANIMATION_PROPERTY @"position"
 #define ANIMATION_DURATION 0.6
@@ -16,6 +17,7 @@
 #define HEIGHT_SCROLLER_THUMBNAIL 150
 #define TFSCROLLER_SPACING_WIDTH 50
 #define SCROLLER_RESUME_TIME 15
+
 @protocol TFScrollerDelegate;
 
 @interface TFScroller : NSObject<UIScrollViewDelegate> {
@@ -48,10 +50,10 @@
 	NSInteger mSelectedIndex;
 	BOOL mManual;
 }
-@property ( assign )			 id<TFScrollerDelegate> mDelegate;
-@property ( nonatomic , retain ) NSMutableArray *mImageArray;
-@property ( nonatomic , retain ) UIScrollView *mScrollView;
-@property ( nonatomic , retain ) NSMutableArray *mImageViewsArray;
+@property (nonatomic, assign)			 id<TFScrollerDelegate> mDelegate;
+@property (nonatomic,retain) NSMutableArray *mImageArray;
+@property (nonatomic,retain) UIScrollView *mScrollView;
+@property (nonatomic,retain) NSMutableArray *mImageViewsArray;
 @property (nonatomic,retain) 	NSTimer *mResumeTimer;
 @property (nonatomic,readwrite) 	BOOL scrollingEnabled;
 @property (nonatomic,retain) 	NSTimer *mTimer;
