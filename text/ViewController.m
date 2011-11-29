@@ -83,7 +83,22 @@
 
 -(UIView*)tfScroller:(TFScroller*)tfscroller viewForIndex:(NSInteger)pInteger
 {
-    UIButton *v = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+    UIButton *v = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];   
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue: v forKey:@"view"];
+    [dic setValue: tfscroller forKey:@"table"];
+    [dic setValue: [NSNumber numberWithInt: pInteger] forKey: @"index"];
+    
+    [self performSelectorOnMainThread:@selector(setValueForView:) withObject:dic waitUntilDone:YES];
+    return [v autorelease];
+}
+
+-(void)setValueForView:(NSMutableDictionary*)dic
+{
+    UIButton *v = [dic objectForKey:@"view"];
+    TFScroller *tfscroller = [dic objectForKey:@"table"];
+    int pInteger = [[dic objectForKey: @"index"] intValue];
+    
     NSString *title = @"NO title";
     
     if (tfscroller == self.mScroller1) {
@@ -107,7 +122,6 @@
         [v setTitleColor: [UIColor blueColor] forState:UIControlStateNormal];
     }
     v.frame = CGRectMake(0, 0, 50, 50);
-    return [v autorelease];
 }
 
 -(NSUInteger)numberOfPagesInScroller:(TFScroller*)tfscroller 
