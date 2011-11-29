@@ -249,13 +249,24 @@
 	}
     
 	UIView *imageView = [mImageViewsArray objectAtIndex:page];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:imageView forKey:@"imageView"];
+    [dic setValue: [NSNumber numberWithInt:page] forKey:@"page"];
+    [self performSelectorOnMainThread:@selector(setValueForView:) withObject: dic waitUntilDone:YES];
+	[pool drain];
+}
+
+-(void)setValueForView:(NSMutableDictionary*)dic
+{
+    UIView *imageView = [dic objectForKey:@"imageView"];
+    int page = [[dic objectForKey: @"page"] intValue];
     if ((NSNull *)imageView == [NSNull null])
     {
         imageView = [[self.mDelegate tfScroller:self viewForIndex:(page%mActualPages) ] retain];
         imageView.frame = CGRectMake(0, mGap, mWidthPage, self.mScrollView.frame.size.height - mGap*2);
         
 		@synchronized(self){
-        [mImageViewsArray replaceObjectAtIndex:page withObject:imageView];
+            [mImageViewsArray replaceObjectAtIndex:page withObject:imageView];
 			[imageView release];
 		}
     }
@@ -265,14 +276,10 @@
 		CGRect frame = mScrollView.frame;
 		frame.origin.x = mGap + ( mWidthPage +mGap ) * page;
 		frame.origin.y = mGap;
-		
 		frame.size = imageView.frame.size;
-		
 		imageView.frame = frame;
 		[mScrollView performSelectorOnMainThread:@selector(addSubview:) withObject:imageView waitUntilDone:NO];
 	}
-
-	[pool drain];
 }
 
 -(void)addAllButtonsToScrollView
